@@ -12,7 +12,7 @@
         <ul id="categories-list" class="list-group">
           <li class="list-group-item list-group-item-dark">List of categories</li>
             {% for cat in categories %}
-              <a href="http://localhost:3000/category/{{cat.id}}/products" class="list-group-item list-group-item-action">{{cat.label}}</a>
+              <a href="./category/{{cat.id}}/products" class="list-group-item list-group-item-action">{{cat.label}}</a>
             {% endfor %}
         </ul>
       </div>

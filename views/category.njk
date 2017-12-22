@@ -13,20 +13,19 @@
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         {% for cat in categories %}
-          <a class="dropdown-item" href="http://localhost:3000/category/{{cat.id}}/products">{{cat.label}}</a>
+          <a class="dropdown-item" href="/category/{{cat.id}}/products">{{cat.label}}</a>
         {% endfor %}
       </div>
     </div>
 </div>
   <div class="container">
-
     <div class="row">
       {% for product in products %}
       <div class="col-4" style="padding:5px">
         <div class="card">
           <div class="card-body">
             <img class="card-img-top" src="https://www.decathlon.fr/media/{{product.image_path}}" alt="Card image cap">
-            <a href="http://localhost:3000/products/{{product.id}}" class="card-link">{{product.title}}</a>
+            <a href="/products/{{product.id}}" class="card-link">{{product.title}}</a>
           </div>
         </div>
       </div>
