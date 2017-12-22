@@ -1,6 +1,6 @@
 const express = require("express");
 const nunjucks = require("nunjucks");
-const server = require("./server.js");
+const api = require("./api.js");
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -20,7 +20,7 @@ app.listen(port, function () {
 });
 
 app.get("/", function(request, result) {
-  server.getCategories()
+  api.getCategories()
   .then(function(categories) {
     result.render("categories_list", {
       categories : categories
@@ -32,8 +32,8 @@ app.get("/", function(request, result) {
 app.get("/category/:idCategory/products", function(request, result) {
   Promise.all(
     [
-      server.getProductsByCategory(request.params.idCategory),
-      server.getCategories(),
+      api.getProductsByCategory(request.params.idCategory),
+      api.getCategories(),
     ]
   )
   .then(function(promiseAllResult) {
@@ -48,7 +48,7 @@ app.get("/category/:idCategory/products", function(request, result) {
 });
 
 app.get("/products/:idProduct", function(request, result) {
-  server.getProducts(request.params.idProduct)
+  api.getProducts(request.params.idProduct)
   .then(function(product) {
     result.render("product", {
       product : product
