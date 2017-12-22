@@ -45,7 +45,7 @@ app.get("/category/:idCategory/products", function(request, result) {
         category : cat
       })
   })
-})
+});
 
 app.get("/products/:idProduct", function(request, result) {
   server.getProducts(request.params.idProduct)
