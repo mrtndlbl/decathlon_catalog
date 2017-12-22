@@ -1,10 +1,10 @@
 require("sepia");
-const server = require("../server.js")
+const api = require("../api.js")
 
 test("Check that getCategories() return the list of categories", () => {
   expect.assertions(1);
 
-  return server.getCategories()
+  return api.getCategories()
     .then(temp => {
       expect(temp[0]).toEqual(
         {
