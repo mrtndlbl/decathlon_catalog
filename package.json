@@ -14,5 +14,8 @@
     "node-fetch": "^1.7.3",
     "nunjucks": "^3.0.1",
     "sepia": "^2.0.2"
+  },
+  "devDependencies": {
+    "jest": "^22.0.4"
   }
 }
